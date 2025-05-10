@@ -1,0 +1,24 @@
+'''Selection sort- Find the smallest number in the unsorted part of the list.
+Swap it with the number at the beginning of the unsorted part.Repeat this for rest of the list.
+The smallest elements get placed at the beginning after each pass.
+1.Define the selection_sort function taking array arr as input
+2.Get the length of the array
+3.Outer loop to fix one position at a time
+4.Assume the current index holds the smallest value
+5.Inner loop to find the smallest element in the unsorted part
+6&7.If a smaller element is found, Update the index of the smallest element
+8.Swap the found minimum element with the first unsorted element
+11.Call selection_sort function to sort the array'''
+
+def selection_sort(arr):  
+    n = len(arr)  
+    for i in range(n):  
+        min_index = i  
+        for j in range(i + 1, n):  
+            if arr[j] < arr[min_index]:  
+                min_index = j  
+        arr[i], arr[min_index] = arr[min_index], arr[i] 
+arr = [64, 25, 12, 22, 11]  
+print("Original Array:", arr) 
+selection_sort(arr)  
+print("Sorted Array  :", arr)  
